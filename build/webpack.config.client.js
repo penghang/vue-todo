@@ -20,7 +20,7 @@ const devServer = {
   port: 8000,
   host: '0.0.0.0',
   overlay: {
-    errors: true,
+    errors: true
   },
   hot: true
 }
@@ -40,7 +40,7 @@ if (isDev) {
             {
               loader: 'postcss-loader',
               options: {
-                sourceMap: true,
+                sourceMap: true
               }
             },
             'stylus-loader'
@@ -74,7 +74,7 @@ if (isDev) {
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: true
                 }
               },
               'stylus-loader'
