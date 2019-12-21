@@ -31,6 +31,8 @@ export default {
     Item,
     Tabs
   },
+  // eslint-disable-next-line vue/require-prop-types
+  props: ['id'],
   data () {
     return {
       todos: [],
@@ -45,6 +47,9 @@ export default {
       const completed = this.filter === 'completed'
       return this.todos.filter(todo => completed === todo.completed)
     }
+  },
+  mounted () {
+    console.log(this.id)
   },
   methods: {
     addTodo (e) {

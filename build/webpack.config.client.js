@@ -15,7 +15,9 @@ const defaultPlugins = [
     }
   }),
   new VueLoaderPlugin(),
-  new HTMLPlugin()
+  new HTMLPlugin({
+    template: path.join(__dirname, 'template.html')
+  })
 ]
 
 const devServer = {
@@ -23,6 +25,11 @@ const devServer = {
   host: '0.0.0.0',
   overlay: {
     errors: true
+  },
+  // 如果不配置,刷新页面会404
+  historyApiFallback: {
+    // 如果output里配置了publicPath,这里也要加上publicPath
+    index: '/public/index.html'
   },
   hot: true
 }
